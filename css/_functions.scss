@@ -1,0 +1,13 @@
+/* Tipografia */
+@mixin letra ($color, $size, $family, $align) {
+    color: $color;
+    font-size: $size;
+    font-family: $family;
+    text-align: $align;
+}
+
+@mixin flex ($display, $justify, $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}

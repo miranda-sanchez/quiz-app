@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Phrasal Verbs Quiz</title>
+  </head>
+  <body>
+    <main>
+      <article id="instructions">
+        <button id="close">&times;</button>
+        <h1>Instructions</h1>
+        <ul>
+          <li>
+            Once you have chosen one option, you won't be able to change it
+          </li>
+          <li>You have 60 seconds to answer</li>
+          <li>You won't be able to go back to the previous question</li>
+        </ul>
+        <button id="gotIt">Got it!</button>
+      </article>
+      <section class="startScreen">
+        <button id="startButton">Start</button>
+      </section>
+      <section id="displayContainer">
+        <article>
+          <!-- Number of question -->
+          <div>
+            <span class="numberOfQuestion"></span>
+          </div>
+          <!-- Time left to provide an answer -->
+          <div>
+            <i class="fa-regular fa-clock"></i>
+            <span class="timeLeft">60s</span>
+          </div>
+        </article>
+        <!-- Questions and options -->
+        <article id="quizContainer">
+          <!-- The activity will be displayed here -->
+        </article>
+        <button id="nextButton">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </section>
+      <section class="scoreContainer hide">
+        <div id="userScore"></div>
+        <button id="restartButton">Restart</button>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/7e4c1a2bd0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

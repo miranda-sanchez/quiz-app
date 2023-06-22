@@ -1,0 +1,158 @@
+@use "_variables" as variable;
+@import "_functions";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    @include letra(variable.$colorDarkest, 16px, 'Poppins', left);
+    background-color: variable.$colorBackground;
+    background-image: linear-gradient(45deg, variable.$colorBackground, lighten(variable.$colorBackground, 15%));
+}
+
+.startScreen, .scoreContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include flex (flex, center, center);
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include letra(variable.$colorDarkest, 1.3rem, 'Poppins', center);
+    padding: 0.6rem 2rem;
+    outline: none;
+    background-color: variable.$colorTwo;
+    border-radius: 10px;
+    &:hover{
+        background-color: lighten(variable.$colorTwo,10%);
+    }
+}
+
+#instructions {
+    background-color: variable.$colorLightest;
+    font-size: 1.2rem;
+    max-width: 600px;
+    min-width: 400px;
+    padding: 30px 40px;
+    position: absolute;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 5px 5px 10px black;
+    /* Settimeout en JS*/
+    display: none;
+    h1 {
+        margin-top: 2rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid variable.$colorTwo;
+    }
+    #close {
+        float: right;
+        margin-bottom: 10px;
+        padding: 0 10px;
+        background-color: variable.$colorTwo;
+    }
+    ul {
+        margin: 2rem 0;
+        li {
+            list-style-position: inside;
+        }
+    }
+
+}
+
+#startButton, #restartButton {
+    box-shadow: 5px 5px 10px variable.$colorDarkest;
+} 
+
+#displayContainer{
+    background-color: variable.$colorLightest;
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    article:first-child{
+        margin-bottom: 20px;
+        @include flex (flex, space-between, center);
+        padding-bottom: 10px;
+        border-bottom: 1px solid variable.$colorTwo;
+        div:nth-child(2) {
+            background-color: variable.$colorTwo;
+            width: 20%;
+            min-width: 100px;
+            padding: 15px;
+            border-radius: 30px;
+            @include flex (flex, space-between, center);
+            padding: 10px 20px;
+        }
+    }
+    #quizContainer {
+        .question {
+            font-weight: 700;
+        }
+        .optionDiv {
+            font-size: 1rem;
+            width: 100%;
+            padding: 20px;
+            margin: 1rem 0;
+            @include flex (flex, center, center);
+            flex-direction: column;
+            outline: none;
+            border: 1px solid #c0bfd2;
+            border-radius: 5px;
+            background-color: variable.$colorLightest;
+            &:disabled{
+                color: #000000;
+                cursor: not-allowed;
+            }
+        }
+        .correct  {
+            background-color: #e7f6d5;
+            border-color: #689f38;
+            color: #689f38;
+
+        }
+        .incorrect {
+            background-color: #ffdde0;
+            color: #d32f2f;
+            border-color: #d32f2f;
+          }
+    }
+    #nextButton {
+        padding: 10px 20px;
+        background-color: variable.$colorTwo;
+        margin-top: 20px;
+        border-radius: 5px;
+        float: right;
+        &:hover {
+            background-color: lighten(variable.$colorTwo, 5%);
+        }
+    }
+}
+
+
+#userScore{
+    color: variable.$colorLightest;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
